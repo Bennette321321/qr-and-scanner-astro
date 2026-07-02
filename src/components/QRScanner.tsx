@@ -21,7 +21,6 @@ export default function QRScanner({ onScan }: QRScannerProps) {
   const scannerRef = useRef<QrScanner | null>(null);
   const lastRef = useRef<string>("");
   const [running, setRunning] = useState<boolean>(false);
-  const [scannedId, setScannedId] = useState<string | null>(null);
 
   useEffect(() => {
     const scanner = new QrScanner(
@@ -32,8 +31,6 @@ export default function QRScanner({ onScan }: QRScannerProps) {
 
         const id = extractId(result.data);
         if (!id) return;
-
-        setScannedId(id);
 
         onScan?.({ id, raw: result.data });
       },
@@ -71,11 +68,19 @@ export default function QRScanner({ onScan }: QRScannerProps) {
 
       <div>
         {!running ? (
-          <button type="button" onClick={start}>
-            Start camera
+          <button
+            type="button"
+            className="border px-3 py-1 rounded-xl"
+            onClick={start}
+          >
+            Start
           </button>
         ) : (
-          <button type="button" onClick={stop}>
+          <button
+            type="button"
+            className="border px-3 py-1 rounded-xl"
+            onClick={stop}
+          >
             Stop
           </button>
         )}

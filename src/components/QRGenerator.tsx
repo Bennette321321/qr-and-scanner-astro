@@ -55,6 +55,7 @@ export default function QRGenerator({
         <label>
           <span>Student ID</span>
           <input
+            className="border px-3 py-1 rounded-xl"
             type="text"
             value={id}
             spellCheck={false}
@@ -71,7 +72,11 @@ export default function QRGenerator({
         <p>{id.trim() || "—"}</p>
       </div>
 
-      <button type="button" onClick={download}>
+      <button
+        type="button"
+        className="border px-3 py-1 rounded-xl"
+        onClick={download}
+      >
         Download png
       </button>
     </div>

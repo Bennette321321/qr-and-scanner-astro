@@ -13,11 +13,11 @@ export default function StudentQR() {
   return (
     <div>
       <div>
-        <h2>Generate</h2>
+        <h2 className="text-xl font-semibold text-red-800">Generate</h2>
         <QRGenerator />
       </div>
       <div>
-        <h2>Scan</h2>
+        <h2 className="text-xl font-semibold text-red-800">Scan</h2>
         <QRScanner onScan={handleScan} />
         <p>{status}</p>
       </div>
