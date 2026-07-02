@@ -1,11 +1,15 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import StudentQR from '../components/StudentQR'
 ---
 
 <Layout>
-	<Welcome />
+	<body>
+		<main class="page">
+			<h1>Student ID QR</h1>
+			<p class="page__sub">Generate qr code for a student, with scanner</p>
+		
+			<StudentQR client:only="react" />
+		</main>
+  </body>
 </Layout>
